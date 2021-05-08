@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Banco {
     private ArrayList<Cliente> clientes;
-
+    private HashMap<Cliente,Conta> contas = new HashMap<Cliente,Conta>();
     //returns -1 if not found the client or returns the index of the clientes array if found
     public int findCliente(int cpf)
     {
@@ -38,5 +39,12 @@ public class Banco {
         System.out.println("Cliente cadastrado com sucesso!");
 
         sc.close();
+    }
+
+    public int get_saldo(Cliente cliente){
+        Conta conta = contas.get(cliente);
+        if(cliente != null)
+            return conta.get_saldo();
+        return -1;
     }
 }
