@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Banco {
-    private ArrayList<Cliente> clientes;
+    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
     //returns -1 if not found the client or returns the index of the clientes array if found
     public int findCliente(int cpf)
