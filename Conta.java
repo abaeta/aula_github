@@ -17,4 +17,8 @@ public class Conta{
         }
     }
 
+    public void deposito(double valor){
+        this.saldo += valor;
+    }
+
 }
