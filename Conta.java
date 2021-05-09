@@ -11,10 +11,12 @@ public class Conta{
         return numero;
     }
 
-    public void saque(double valor){
+    public boolean saque(double valor){
         if(this.saldo >= valor && valor > 0){
             this.saldo -= valor;
+            return true;
         }
+        return false;
     }
 
     public void deposito(double valor){
