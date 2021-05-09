@@ -86,7 +86,36 @@ public class Banco {
         while(index == -1);
         
         contas.get(index).saque(valor);
-        sc.close()
+        sc.close();
+    }
+
+    public void deposito(){
+        
+        int index;
+        double valor;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Entre com o valor do deposito");
+        valor = sc.nextDouble();
+
+        if(valor > 0){
+
+            do
+            {
+                System.out.print("Digite seu numero da conta");
+                int numero = sc.nextInt();
+                index = findConta(numero);
+            }
+            while(index == -1);
+        
+            contas.get(index).deposito(valor);
+        }
+        else {
+            System.out.println("Valor de deposito invalido");
+        }
+        
+        sc.close();
     }
 }
 
