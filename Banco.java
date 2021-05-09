@@ -38,7 +38,7 @@ public class Banco {
 
         System.out.println("Cliente cadastrado com sucesso!");
 
-        sc.close();
+        //sc.close();
     }
 
     public int findConta(int numero){
@@ -64,7 +64,7 @@ public class Banco {
         
         System.out.println("Saldo: " + contas.get(index).getSaldo());
 
-        sc.close();
+        //sc.close();
     }
 
     public void saque(){
@@ -86,7 +86,7 @@ public class Banco {
         while(index == -1);
         
         contas.get(index).saque(valor);
-        sc.close();
+        //sc.close();
     }
 
     public void deposito(){
@@ -115,7 +115,7 @@ public class Banco {
             System.out.println("Valor de deposito invalido");
         }
         
-        sc.close();
+        //sc.close();
     }
 
     public void transferencia(){
