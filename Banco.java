@@ -66,4 +66,27 @@ public class Banco {
 
         sc.close();
     }
+
+    public void saque(){
+        
+        int index;
+        double valor;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Entre com o valor do saque");
+        valor = sc.nextDouble();
+       
+        do
+        {
+            System.out.print("Digite seu numero da conta: ");
+            int numero = sc.nextInt();
+            index = findConta(numero);
+        }
+        while(index == -1);
+        
+        contas.get(index).saque(valor);
+        sc.close()
+    }
 }
+
