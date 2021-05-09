@@ -117,5 +117,42 @@ public class Banco {
         
         sc.close();
     }
+
+    public void transferencia(){
+        
+        int index_origem, index_destino;
+        double valor;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Entre com o valor de transferência");
+        valor = sc.nextDouble();
+
+        if(valor > 0){
+
+            do
+            {
+                System.out.print("Digite o numero da conta de origem");
+                int numero = sc.nextInt();
+                index_origem = findConta(numero);
+            }
+            while(index_origem == -1);
+
+            do
+            {
+                System.out.print("Digite o numero da conta de destino");
+                int numero = sc.nextInt();
+                index_destino = findConta(numero);
+            }
+            while(index_destino == -1);
+
+            if(contas.get(index_origem).saque(valor)){
+                contas.get(index_destino).deposito(valor);
+            }
+        }
+        else {
+            System.out.println("Valor de transferência inválido");
+        }
+    }
 }
 
