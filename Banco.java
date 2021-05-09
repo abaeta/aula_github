@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Banco {
     private ArrayList<Cliente> clientes;
-    private HashMap<Cliente,Conta> contas = new HashMap<Cliente,Conta>();
+    private ArrayList<Conta> contas = new ArrayList<Conta>();
     //returns -1 if not found the client or returns the index of the clientes array if found
     public int findCliente(int cpf)
     {
@@ -41,10 +40,29 @@ public class Banco {
         sc.close();
     }
 
-    public int get_saldo(Cliente cliente){
-        Conta conta = contas.get(cliente);
-        if(cliente != null)
-            return conta.get_saldo();
+    public int findConta(int numero){
+        for(int i = 0; i < contas.size(); i++){
+            if(contas.get(i).getNumero() == numero)
+                return i;
+        }
         return -1;
+    }
+
+    public void visualizarSaldo(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" ==== Visulizar saldo ==== \n");
+        
+        int index;
+        do
+        {
+            System.out.print("Digite seu numero da conta: ");
+            int numero = sc.nextInt();
+            index = findConta(numero);
+        }
+        while(index == -1);
+        
+        System.out.println("Saldo: " + contas.get(index).getSaldo());
+
+        sc.close();
     }
 }
