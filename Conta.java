@@ -12,7 +12,7 @@ public class Conta{
     }
 
     public void saque(int valor){
-        if(this.saldo >= valor){
+        if(this.saldo >= valor && valor > 0){
             this.saldo -= valor;
         }
     }

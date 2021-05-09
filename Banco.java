@@ -68,9 +68,11 @@ public class Banco {
     }
 
     public void saque(){
-
+        
         int index;
         double valor;
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Entre com o valor do saque");
         valor = sc.nextDouble();
@@ -84,6 +86,7 @@ public class Banco {
         while(index == -1);
         
         contas.get(index).saque(valor);
+        sc.close()
     }
 }
 
