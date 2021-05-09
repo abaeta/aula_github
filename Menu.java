@@ -8,6 +8,8 @@ public class Menu {
 	private String title;
 	private List<String> options;
 
+
+
 	public Menu(List<String> options) {
 		this.title = "Menu";
 		this.options = options;
@@ -20,28 +22,29 @@ public class Menu {
 
 	public int getSelection() {
 		int op = 0;
-		while (op==0){
+		while (op == 0)
+		{
 			System.out.println(title+"\n");
+			
 			int i=1;
-			for (String option : options) {
+
+			for (String option : options)
+			{
 				System.out.println(i++ + " - " + option);
 			}
 
 			System.out.println("Informe a opcao desejada. ");
 			Scanner s = new Scanner(System.in);
-			String str = s.nextLine();
-			try {
-				op = Integer.parseInt(str);
-			}
-			catch (NumberFormatException e) {
-				op =0;
-			}
-			if (op>=i){
+			op = s.nextInt();
+
+			if (op >= i){
 				System.out.println("Opcao errada!");
-				op=0;
+				op = 0;
 			}
 
+			//s.close();
 		}
+
 		return op;
 	}
 }
