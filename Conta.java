@@ -1,8 +1,8 @@
 public class Conta{
     private int numero;
-    private int saldo;
+    private double saldo;
 
-    public int getSaldo(){
+    public double getSaldo(){
         return saldo;
     }
 
