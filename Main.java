@@ -21,7 +21,7 @@ public class Main {
 			}
 			else if (op == 3)
 			{
-				//TODO remover conta
+				banco.removerConta();
 			}
 			else if (op == 4)
 			{
