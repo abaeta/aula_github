@@ -67,6 +67,25 @@ public class Banco {
         System.out.println("Conta cadastrada com sucesso!");
     }
 
+    public void removerConta()
+    {
+        System.out.println("=== Excluir Conta ===");
+        Scanner sc = new Scanner(System.in);
+
+        int conta;
+
+        do
+        {
+            System.out.println("Digite o numero da conta: ");
+            conta = sc.nextInt();
+        }
+        while(findConta(conta) == -1);
+
+        contas.remove(findConta(conta));
+
+        System.out.println("Conta removida com sucesso!");
+    }
+
     public int findConta(int numero){
         for(int i = 0; i < contas.size(); i++){
             if(contas.get(i).getNumero() == numero)
