@@ -41,6 +41,32 @@ public class Banco {
         //sc.close();
     }
 
+    public void abrirConta()
+    {
+        System.out.println("=== Cadastrar Conta ===");
+        Scanner sc = new Scanner(System.in);
+
+        int cpf, conta;
+
+        do
+        {
+            System.out.println("Digite o numero de seu CPF: ");
+            cpf = sc.nextInt();
+        }
+        while(findCliente(cpf) == -1);
+        
+        do
+        {
+            System.out.println("Digite o numero da conta: ");
+            conta = sc.nextInt();
+        }
+        while(findConta(conta) != -1);
+
+        contas.add(new Conta(cpf, conta));
+
+        System.out.println("Conta cadastrada com sucesso!");
+    }
+
     public int findConta(int numero){
         for(int i = 0; i < contas.size(); i++){
             if(contas.get(i).getNumero() == numero)

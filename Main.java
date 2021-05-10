@@ -17,7 +17,7 @@ public class Main {
 			}
 			else if (op == 2)
 			{
-				//TODO cadastrar conta
+				banco.abrirConta();
 			}
 			else if (op == 3)
 			{
